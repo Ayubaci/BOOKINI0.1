@@ -1,0 +1,149 @@
+/* start global styling*/
+:root {
+    --bookini-font: 'Roboto', sans-serif;
+    --background-color: #cceaff4b;
+    --main-color: #396dbb;
+}
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* start sign up styling*/
+.signup-container {
+    display: flex;
+    margin-top: 100px;
+    width: 50%;
+    background-color: white;
+    height: 490px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.486);
+    margin-left: 25%;
+}
+
+/*start form styling*/
+.form-container {
+    width: 65%;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+}
+
+.form-container form .signup-header {
+    font-size: 30px;
+    color: black;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.form-container form label {
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.493);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-container form input {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--main-color);
+    font-family: roboto;
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid rgba(139, 139, 139, 0.507);
+}
+
+.form-container form input:focus {
+    outline: none;
+}
+
+.form-container form .radio-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.form-container form .radio-input {
+    width: auto;
+}
+
+.form-container form .signup-btn {
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-family: roboto;
+    height: 35px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.form-container form .signup-btn:hover {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.541);
+    color: var(--main-color);
+}
+
+/* start login option */
+.login-option {
+    display: flex;
+    flex-direction: column;
+    font-family: roboto;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+    background-image: url("/bookini/resources/img/nyc.jpg");
+    border-radius: 10px;
+}
+
+.login-option h2 {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.login-option p {  
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.login-option a {
+    text-decoration: none;
+    width: 100px;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 200px;
+}
+.login-option a:hover{
+    border:2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.336);
+    z-index: 1;
+    border-radius: 10px ;
+}
+
+.login-option h2,
+.white-p,
+a {
+    z-index: 2;
+    color: white;
+}

@@ -1,0 +1,25 @@
+/* start global styling*/
+:root {
+    --bookini-font: 'Roboto', sans-serif;
+    --background-color: #cceaff4b;
+    --main-color: #396dbb;
+}
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*start login section styling*/
+.signup-option {
+    background-image: url("/bookini/resources/img/brooklin.jpg") ;
+}
+
+.signup-container .form-container form .login-header {
+    margin-bottom: 80px;
+}
+
+
+.login-btn {
+    margin-top: 50px;
+}

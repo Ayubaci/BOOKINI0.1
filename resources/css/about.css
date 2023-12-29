@@ -1,0 +1,19 @@
+/* start global styling*/
+:root {
+    --bookini-font: 'Roboto', sans-serif;
+    --background-color: #cceaff4b;
+    --main-color: #396dbb;
+}
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.about-section {
+    position: relative;
+}
+.about-section img{
+    width: 100%;
+    position: absolute;
+}

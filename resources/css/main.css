@@ -1,0 +1,130 @@
+/* start global styling*/
+:root {
+    --bookini-font: 'Roboto', sans-serif;
+    --background-color: #d9fff0;
+    --main-color: #396dbb;
+}
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+/*start styling header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    padding: 10px 0px 10px 20px;
+    border-bottom: 2px solid rgba(53, 53, 53, 0.144);
+    position: fixed;
+    z-index: 99;
+}
+
+header .logo-holder {
+    width: 11.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+}
+
+header .logo-holder .logo, 
+.logo-footer{
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+header .logo-holder > h1{
+    color: var(--main-color);
+    font-size: 30px;
+    font-family: salsa;
+    text-transform: uppercase;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header nav a{
+    color: rgba(53, 53, 53, 0.808);
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 5px;
+}
+
+/*start footer styling*/
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-family: roboto;
+}
+
+footer .info-1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+}
+
+footer .info-1 .logo-footer {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+footer .info-1 h4 {
+    padding-bottom: 5px;
+}
+
+footer .info-1 p {
+    font-size: 13px;
+}
+
+footer .info-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .info-2 .section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 25px;
+    margin-left: 50px;
+}
+
+footer .info-2 .section a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+footer .info-2 .section a:hover {
+    color: rgb(9, 157, 255);
+}
+
+footer .info-2 .section span {
+    color: rgba(53, 53, 53, 0.808);
+    font-weight: bold;
+}
