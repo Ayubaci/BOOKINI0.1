@@ -23,6 +23,8 @@ if (isset($_POST["login"])) {
             $_SESSION["user_authenticated"] = true;
             header("location: http://localhost/bookini/bookshelf.php");
             exit;
+        } else {
+            $errorMessage = "Invalid password or username<br>please enter a valid one!";
         }
     }
     $conn->close();
@@ -41,6 +43,13 @@ if (isset($_POST["login"])) {
 
                 <label for="password">password</label>
                 <input type="password" required name="password" id="password">
+
+                <!-- display a message 'invalid password or username'-->
+                <?php
+                if (isset($errorMessage)) {
+                    echo "<div style='color: red; font-family : roboto; font-size : 18px'> $errorMessage </div>";
+                }
+                ?>
 
                 <input class="signup-btn login-btn" type="submit" name="login" value="Login">
             </form>

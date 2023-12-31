@@ -6,45 +6,77 @@ if (!isset($_SESSION['user_authenticated']) || !$_SESSION['user_authenticated'])
     header("Location: login.php");
     exit;
 }
+
+//the navbar-->
+include("header.html");
 ?>
-<!-- the navbar-->
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--external links-->
-    <link rel="stylesheet" href="./resources/css/main.css">
-    <link rel="stylesheet" href="./resources/css/all.min.css">
-    <link rel="stylesheet" href="./resources/css/fontawesome.min.css">
-    <link rel="stylesheet" href="./resources/css/welcome.css">
-    <link rel="stylesheet" href="./resources/css/login.css">
-    <link rel="stylesheet" href="./resources/css/signup.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Maps&family=Rubik+Mono+One&family=Salsa&display=swap" rel="stylesheet">
-    <!--external links-->
-    <title>WELCOME TO BOOKINI!</title>
-</head>
+<!-- start building our bookshelf-->
+<div class="welcome-section b">
+    <div class="bookshelf">
+        <div class="filter-section">
+            <form action="bookshelf.php" class="filters" method="post">
 
-<body>
-    <header>
-        <div class="logo-holder">
-            <i class="fa-solid fa-book-open-reader logo logo-footer"></i>
-            <h1>bookini</h1>
+                <!-- creating our filters-->
+                <!-- creating our filters by major-->
+                <label for="major">Search by major:</label>
+                <div class="radio-input-container">
+                    <input type="radio" name="major" value="biology" id="biology">
+                    <label for="biology">Biology</label>
+                </div>
+                <div class="radio-input-container">
+                    <input type="radio" name="major" value="computerscience" id="computerscience">
+                    <label for="computerscience">Computer Science</label>
+                </div>
+                <br>
+
+                <!-- creating our filters by modules-->
+                <label for="module">Search by Modules:</label>
+                <div class="radio-input-container">
+                    <input type="radio" name="module" value="math" id="math">
+                    <label for="math">Math</label>
+                </div>
+                <div class="radio-input-container">
+                    <input type="radio" name="module" value="html" id="html">
+                    <label for="html">HTML5</label>
+                </div>
+                <div class="radio-input-container">
+                    <input type="radio" name="module" value="nature" id="nature">
+                    <label for="nature">Nature</label>
+                </div>
+                <br>
+                <input class="apply-btn" type="submit" value="Search" name="apply">
+            </form>
         </div>
-        <nav>
-            <a href="index.php">home</a>
-            <a href="about.php">about us</a>
-            <a href="#">Contact Us</a>
-        </nav>
-    </header>
-    <!-- start building our bookshelf-->
-    <div class="welcome-section bookshelf">
-    </div>
+        <div class="display-books-section">
+            <!-- here we gonna create a book generator to load our stored books to the html file:-->
+            <!--first we are going to connect to our database where the books are sotred then retrieve thier data-->
+            <?php
+            include("connection.php");
+            $sql = "SELECT * FROM books";
+            $result = $conn->query($sql);
 
-    <?php
-    //footer section:
-    include("footer.html");
-    ?>
+            if ($result->num_rows > 0) {
+                // Loop through each row in the result set
+                while ($row = $result->fetch_assoc()) {
+                    // Access individual fields using associative array keys
+                    echo '<div class="a-book-card">
+                            <img src=' . $row["imgpath"] . '>
+                            <h3>Title: ' . $row["title"] . '</h3>
+                            <form action="bookshelf.php" method="post">
+                                <input class="order-btn" type="submit" value="Order" name="order">
+                            </form>
+                        </div>';
+                }
+            } else {
+                echo "No results";
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<?php
+//footer section:
+include("footer.html");
+?>

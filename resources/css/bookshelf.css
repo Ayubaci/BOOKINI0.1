@@ -1,0 +1,103 @@
+/* start global styling*/
+:root {
+    --bookini-font: 'Roboto', sans-serif;
+    --background-color: #cceaff4b;
+    --main-color: #396dbb;
+}
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.b {
+    height: auto;
+}
+/*bookshelf global styling*/
+.bookshelf {
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+    font-family: roboto;
+    font-size: 18px;
+}
+/* start filters section styling */
+.filter-section {
+    width: 15%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: rgba(73, 73, 73, 0.904);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters input {
+    margin: 10px 0px;
+}
+
+.apply-btn {
+    font-size: 15px;
+    font-family: roboto;
+    text-transform: capitalize;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+}
+/* end filters section styling */
+/*start bookshelf section*/
+.display-books-section {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 250px 250px 250px 250px;
+    width: 85%;
+    padding: 0px 0px 30px 0px;
+    justify-content: center;
+}
+
+/*stayling the card template*/
+.a-book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    background-color: rgba(79, 140, 255, 0.548);
+    text-align: center;
+    height: 320px;
+    border-radius: 6px;
+}
+
+.a-book-card img {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.display-books-section .a-book-card h3 {
+    font-family: monospace;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.order-btn {
+    font-size: 15px;
+    font-family: roboto;
+    text-transform: capitalize;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    width: 150px;
+}
